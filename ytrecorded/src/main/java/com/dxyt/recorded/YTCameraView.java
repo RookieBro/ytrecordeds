@@ -157,14 +157,14 @@ public class YTCameraView extends FrameLayout implements CameraInterface.CameraO
         mSwitchCamera = (ImageView) view.findViewById(R.id.image_switch);
         mSwitchCamera.setImageResource(iconSrc);
         mFlashLamp = (ImageView) view.findViewById(R.id.image_flash);
-        setFlashRes();
+//        setFlashRes();
         mFlashLamp.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 type_flash++;
                 if (type_flash > 0x023)
                     type_flash = TYPE_FLASH_AUTO;
-                setFlashRes();
+//                setFlashRes();
             }
         });
         mCaptureLayout = (CaptureLayout) view.findViewById(R.id.capture_layout);
@@ -581,20 +581,20 @@ public class YTCameraView extends FrameLayout implements CameraInterface.CameraO
         this.rightClickListener = clickListener;
     }
 
-    private void setFlashRes() {
-        switch (type_flash) {
-            case TYPE_FLASH_AUTO:
-                mFlashLamp.setImageResource(R.drawable.ic_flash_auto);
-                machine.flash(Camera.Parameters.FLASH_MODE_AUTO);
-                break;
-            case TYPE_FLASH_ON:
-                mFlashLamp.setImageResource(R.drawable.ic_flash_on);
-                machine.flash(Camera.Parameters.FLASH_MODE_ON);
-                break;
-            case TYPE_FLASH_OFF:
-                mFlashLamp.setImageResource(R.drawable.ic_flash_off);
-                machine.flash(Camera.Parameters.FLASH_MODE_OFF);
-                break;
-        }
-    }
+//    private void setFlashRes() {
+//        switch (type_flash) {
+//            case TYPE_FLASH_AUTO:
+//                mFlashLamp.setImageResource(R.drawable.ic_flash_auto);
+//                machine.flash(Camera.Parameters.FLASH_MODE_AUTO);
+//                break;
+//            case TYPE_FLASH_ON:
+//                mFlashLamp.setImageResource(R.drawable.ic_flash_on);
+//                machine.flash(Camera.Parameters.FLASH_MODE_ON);
+//                break;
+//            case TYPE_FLASH_OFF:
+//                mFlashLamp.setImageResource(R.drawable.ic_flash_off);
+//                machine.flash(Camera.Parameters.FLASH_MODE_OFF);
+//                break;
+//        }
+//    }
 }
